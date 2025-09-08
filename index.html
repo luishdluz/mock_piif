@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal Interactivo de Información Financiera</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo-portal">
+      <img src="img/PIIF-logo.png" alt="Portal" class="logo-grande">
+      <img src="img/PIIF-icono.png" alt="Portal" class="logo-pequeno">
+    </div>
+    
+    <div class="divInfoHeader">
+      <div class="datos-usuario">
+        <span>Luis Antonio Hernández De La Luz</span>
+        <span>B16847 - 002001</span>
+      </div>
+      <img class="user-img" src="img/b16847.png" alt="Usuario"/>
+      <div class="menu-usuario" id="menuUsuario">
+        <p>Luis Antonio Hernández De La Luz</p>
+        <p>B16847 - 002001</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+	  <!-- Barra de búsqueda -->
+	  <div class="busqueda-libros">
+		<input type="text" placeholder="Buscar libro por título..." id="buscarLibro">
+	  </div>
+
+	  <!-- Grid de libros -->
+		<div class="grid-libros" id="gridLibros">
+		
+			<div class="libro" 
+				 data-titulo="Créditos al Consumo" 
+				 data-descripcion="Información detallada sobre los créditos al consumo en México." 
+				 data-imagen="img/imgLibro.jpg">
+			  <div class="cinta">
+				<div class="espacio-superior"></div>
+				<span class="numero">1</span>
+				<span class="clasificacion-icono">👤</span>
+			  </div>
+			  <h5>Créditos al Consumo</h5>
+			  <div class="acciones-libro">
+				<button class="btn-explorar">Explorar</button>
+				<div class="icono-info">ℹ️</div>
+			  </div>
+			</div>
+
+			<div class="libro" 
+				 data-titulo="Créditos Hipotecarios" 
+				 data-descripcion="Guía sobre los diferentes tipos de créditos hipotecarios y sus características." 
+				 data-imagen="img/imgLibro.jpg">
+			  <div class="cinta">
+				<div class="espacio-superior"></div>
+				<span class="numero">2</span>
+				<span class="clasificacion-icono">🔒</span>
+			  </div>
+			  <h5>Créditos Hipotecarios</h5>
+			  <div class="acciones-libro">
+				<button class="btn-explorar">Explorar</button>
+				<div class="icono-info">ℹ️</div>
+			  </div>
+			</div>
+
+			<div class="libro" 
+				 data-titulo="Operaciones en Efectivo" 
+				 data-descripcion="Detalles de las operaciones en efectivo en moneda nacional." 
+				 data-imagen="img/imgLibro.jpg">
+			  <div class="cinta">
+				<div class="espacio-superior"></div>
+				<span class="numero">3</span>
+				<span class="clasificacion-icono">👤</span>
+			  </div>
+			  <h5>Operaciones en Efectivo</h5>
+			  <div class="acciones-libro">
+				<button class="btn-explorar">Explorar</button>
+				<div class="icono-info">ℹ️</div>
+			  </div>
+			</div>
+
+			<div class="libro" 
+				 data-titulo="Mercado de Valores" 
+				 data-descripcion="Introducción al mercado de valores y sus principales instrumentos." 
+				 data-imagen="img/imgLibro.jpg">
+			  <div class="cinta">
+				<div class="espacio-superior"></div>
+				<span class="numero">4</span>
+				<span class="clasificacion-icono">🔒</span>
+			  </div>
+			  <h5>Mercado de Valores</h5>
+			  <div class="acciones-libro">
+				<button class="btn-explorar">Explorar</button>
+				<div class="icono-info">ℹ️</div>
+			  </div>
+			</div>
+
+			<div class="libro" 
+				 data-titulo="Política Monetaria" 
+				 data-descripcion="Explicación de la política monetaria aplicada en México." 
+				 data-imagen="img/imgLibro.jpg">
+			  <div class="cinta">
+				<div class="espacio-superior"></div>
+				<span class="numero">5</span>
+				<span class="clasificacion-icono">👤</span>
+			  </div>
+			  <h5>Política Monetaria</h5>
+			  <div class="acciones-libro">
+				<button class="btn-explorar">Explorar</button>
+				<div class="icono-info">ℹ️</div>
+			  </div>
+			</div>
+
+			<div class="libro" 
+				 data-titulo="Inflación y Precios" 
+				 data-descripcion="Estudio sobre la inflación y su impacto en los precios." 
+				 data-imagen="img/imgLibro.jpg">
+			  <div class="cinta">
+				<div class="espacio-superior"></div>
+				<span class="numero">6</span>
+				<span class="clasificacion-icono">👤</span>
+			  </div>
+			  <h5>Inflación y Precios</h5>
+			  <div class="acciones-libro">
+				<button class="btn-explorar">Explorar</button>
+				<div class="icono-info">ℹ️</div>
+			  </div>
+			</div>
+
+			<div class="libro" 
+				 data-titulo="Sistema Bancario" 
+				 data-descripcion="Descripción del sistema bancario mexicano y sus principales instituciones." 
+				 data-imagen="img/imgLibro.jpg">
+			  <div class="cinta">
+				<div class="espacio-superior"></div>
+				<span class="numero">7</span>
+				<span class="clasificacion-icono">🔒</span>
+			  </div>
+			  <h5>Sistema Bancario</h5>
+			  <div class="acciones-libro">
+				<button class="btn-explorar">Explorar</button>
+				<div class="icono-info">ℹ️</div>
+			  </div>
+			</div>
+
+			<div class="libro" 
+				 data-titulo="Finanzas Públicas" 
+				 data-descripcion="Análisis de las finanzas públicas y el gasto gubernamental." 
+				 data-imagen="img/imgLibro.jpg">
+			  <div class="cinta">
+				<div class="espacio-superior"></div>
+				<span class="numero">8</span>
+				<span class="clasificacion-icono">👤</span>
+			  </div>
+			  <h5>Finanzas Públicas</h5>
+			  <div class="acciones-libro">
+				<button class="btn-explorar">Explorar</button>
+				<div class="icono-info">ℹ️</div>
+			  </div>
+			</div>
+
+			<div class="libro" 
+				 data-titulo="Reservas Internacionales" 
+				 data-descripcion="Informe sobre las reservas internacionales y su importancia económica." 
+				 data-imagen="img/imgLibro.jpg">
+			  <div class="cinta">
+				<div class="espacio-superior"></div>
+				<span class="numero">9</span>
+				<span class="clasificacion-icono">👤</span>
+			  </div>
+			  <h5>Reservas Internacionales</h5>
+			  <div class="acciones-libro">
+				<button class="btn-explorar">Explorar</button>
+				<div class="icono-info">ℹ️</div>
+			  </div>
+			</div>
+
+			<div class="libro" 
+				 data-titulo="Indicadores Económicos" 
+				 data-descripcion="Guía de los principales indicadores económicos utilizados en México." 
+				 data-imagen="img/imgLibro.jpg">
+			  <div class="cinta">
+				<div class="espacio-superior"></div>
+				<span class="numero">10</span>
+				<span class="clasificacion-icono">🔒</span>
+			  </div>
+			  <h5>Indicadores Económicos</h5>
+			  <div class="acciones-libro">
+				<button class="btn-explorar">Explorar</button>
+				<div class="icono-info">ℹ️</div>
+			  </div>
+			</div>
+
+
+
+
+		</div>
+	
+	
+	<!-- Vista de libro explorado -->
+  <div id="vistaLibro">
+    <button id="btnRegresar" class="btn-regresar">← Regresar</button>
+    Contenido del libro
+  </div>
+	
+	
+	<!-- Modal -->
+	<div id="modalLibro" class="modal">
+	  <div class="modal-contenido">
+		<span class="cerrar">&times;</span>
+		<img id="modalImagen" src="" alt="Imagen del libro">
+		<h2 id="modalTitulo"></h2>
+		<p id="modalDescripcion"></p>
+	  </div>
+	</div>
+	
+	
+	
+	
+</main>
+
+
+  <footer>
+    <div class="footer-left">
+      <img src="img/logoBM.png" alt="Banco de México" class="logo-footer">
+      <small>Banco de México</small>
+    </div>
+    <div class="idiomas">
+      <img src="img/esp.png" alt="ES" class="icono-idioma">
+      <img src="img/eng.png" alt="EN" class="icono-idioma">
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
