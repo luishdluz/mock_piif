@@ -1,0 +1,65 @@
+#titulo-y-barra {
+  position: sticky;
+  top: var(--header-h); /* justo debajo del header */
+  z-index: 998;
+  background: linear-gradient(135deg, #3498DB, #20385a) !important;
+  text-align: center;
+}
+
+#titulo-y-barra h1 {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  word-break: break-word; /* permite que títulos largos se ajusten */
+}
+
+#barra-fija {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #04b3bb, #3b7878) !important;
+}
+
+/*Imagenes de las opciones de usuario*/
+.img-circular {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+.img-circular:hover {
+  transform: scale(1.1);
+}
+
+/* Permite que el texto del botón se ajuste */
+#texto-seleccionado {
+  white-space: normal;
+  word-wrap: break-word;
+  flex: 1;
+}
+
+/* Opciones con salto de línea si es necesario */
+.dropdown-item {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.dropdown .dropdown-menu {
+  width: 100% !important;
+  min-width: unset !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+
+
+/* Contenido principal*/
+#contenido-portal {
+  padding-top: calc(var(--header-h) + 1.5rem); 
+}
+
