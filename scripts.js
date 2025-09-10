@@ -175,30 +175,4 @@ $(document).ready(function() {
 		$('#' + tabId).addClass('active');
 	});
 	
-	let deferredPrompt;
-
-	window.addEventListener('beforeinstallprompt', (e) => {
-	  // Evita que se muestre automáticamente el banner
-	  e.preventDefault();
-	  deferredPrompt = e;
-	  // Muestra el botón
-	  const btn = document.getElementById('btnAgregarInicio');
-	  btn.style.display = 'block';
-	});
-
-	document.getElementById('btnAgregarInicio').addEventListener('click', async () => {
-	  if (deferredPrompt) {
-		deferredPrompt.prompt(); // Muestra el diálogo "Agregar a inicio"
-		const { outcome } = await deferredPrompt.userChoice;
-		if (outcome === 'accepted') {
-		  console.log('Usuario aceptó agregar a inicio');
-		} else {
-		  console.log('Usuario rechazó agregar a inicio');
-		}
-		deferredPrompt = null; // Limpiar
-	  }
-	});
-
-
-
 });
