@@ -46,7 +46,8 @@
             <img src="img/esp.png" class="icono-boton" alt="Idioma ES">
             <img src="img/eng.png" class="icono-boton" alt="Idioma EN">
             <img src="img/permisos.png" class="icono-boton" alt="Permisos">
-            <img src="img/permisos.png" class="icono-boton" alt="Administrador">
+            <img src="img/admin.png" class="icono-boton" alt="Administrador">
+			<img src="img/dashboard.png" class="icono-boton" alt="Administrador">
             <img src="img/cerrar_sesion.png" class="icono-boton" alt="Cerrar Sesión">
           </div>
           <!-- Input de búsqueda -->
@@ -60,10 +61,13 @@
             <img src="img/esp.png" class="icono-boton" alt="Idioma ES">
             <img src="img/eng.png" class="icono-boton" alt="Idioma EN">
             <img src="img/permisos.png" class="icono-boton" alt="Permisos">
-            <img src="img/permisos.png" class="icono-boton" alt="Administrador">
+            <img src="img/admin.png" class="icono-boton" alt="Administrador">
+			<img src="img/dashboard.png" class="icono-boton" alt="Administrador">
             <img src="img/cerrar_sesion.png" class="icono-boton" alt="Cerrar Sesión">
           </div>
         </div>
+		
+		
         <!-- Grid de libros -->
         <div class="grid-libros" id="gridLibros">
           <div class="libro" data-titulo="Créditos al Consumo" data-descripcion="Información detallada sobre los créditos al consumo en México." data-imagen="img/imgLibro.jpg">
@@ -439,7 +443,10 @@
             </div>
           </div>
         </div>
-        <!-- Contenido de libros -->
+        
+		
+		
+		<!-- Contenido de libros -->
         <div id="texto-indices" style="display:none; text-align:center; margin-top:20px;">
           <!-- Contenedor para mostrar el libro seleccionado -->
           <div id="detalle-libro">
@@ -447,58 +454,118 @@
             <div id="detalle-titulo"></div>
           </div>
           <!-- Contenido de indices -->
-          <div id="grid-secundario">
-            <div id="columna-izquierda">
-              <div class="cards-izquierda">
-                <div class="card" data-descripcion="Introducción general al sistema financiero y su regulación en México.">Introducción</div>
-                <div class="card" data-descripcion="Calificaciones sobre la calidad y cumplimiento en el envío de información financiera al Banco de México.">Tablero de calificaciones en el envio de información del sistema financiero del Banco de México</div>
-                <div class="card" data-descripcion="Información sobre las operaciones y mecanismos en el mercado de derivados financieros.">Mercado de derivados</div>
-                <div class="card" data-descripcion="Datos y análisis sobre el mercado de valores en México, incluyendo acciones y bonos.">Mercado de valores</div>
-                <div class="card" data-descripcion="Información sobre el mercado cambiario, tipos de cambio y operaciones de divisas.">Mercado cambiario</div>
-                <div class="card" data-descripcion="Datos sobre la capitalización y solvencia de los bancos múltiples en México.">Capitalización de los bancos múltiples</div>
-                <div class="card" data-descripcion="Información sobre los valores gubernamentales emitidos y en circulación en el país.">Valores gubernamentales en circulación</div>
-                <div class="card" data-descripcion="Datos sobre la captación de recursos por parte de los bancos múltiples y los bancos de desarrollo.">Captación de recursos de los bancos múltiples y los bancos de desarrollo</div>
-                <div class="card" data-descripcion="Información sobre el mercado de renta variable, incluyendo acciones y otros instrumentos de inversión.">Mercado de renta variable</div>
-              </div>
-            </div>
-            <div id="columna-derecha">
-              <div id="descripcion-card"> Selecciona un índice para ver su descripción. </div>
-			   <!-- Buscador de elementos -->
-			  <input type="text" id="buscarElementos" placeholder="Buscar elementos...">
-              <div id="contenido-restante" style="display:flex; flex-direction:column; height:100%;">
-                <!-- Nav tabs con margin-top -->
-                <ul class="nav nav-tabs mt-2" id="tabs-financieros" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">Graficas</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">Extractores</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">Notas Metodologicas</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button" role="tab" aria-controls="tab4" aria-selected="false">Microdatos</button>
-                  </li>
-                </ul>
-                <!-- Contenido de los tabs -->
-                <div class="tab-content flex-grow-1 border border-top-0 p-3" id="tabs-financieros-content">
-                  <div class="tab-pane fade show active d-flex flex-column" id="tab1" role="tabpanel" aria-labelledby="tab1-tab" style="overflow-y:auto;"> 
-					  <div class="cards-tab">
-						<div class="card-tab" data-descripcion="Descripción de Card 1 del Tab 1">Card 1</div>
-						<div class="card-tab" data-descripcion="Descripción de Card 2 del Tab 1">Card 2</div>
-						<div class="card-tab" data-descripcion="Descripción de Card 3 del Tab 1">Card 3</div>
-						<div class="card-tab" data-descripcion="Descripción de Card 4 del Tab 1">Card 4</div>
-						<div class="card-tab" data-descripcion="Descripción de Card 4 del Tab 1">Card 5</div>
+          <div class="grid-secundario">
+			  <div class="columna izquierda">
+					<div class="changelog-entry position-relative p-4" data-descripcion="El Portal Interactivo de Información Financiera (PIIF) es una herramienta informática de diseminación de información, la cual permite visualizar algunos de los principales datos sobre los aspectos más relevantes de diversos mercados financieros. El diseño del PIIF favorece el uso de la información financiera por parte de diferentes tipos de usuarios. De manera paralela, el PIIF ayuda en la organización y sistematización de la información financiera que compila el Banco de México.">
+                        <div class="change-type added"></div>
+                        <div class="ms-3">
+                            <h6 class="fw-bold mb-3 textIndice">Introducción</h6>
+                        </div>
+                    </div>
+					<div class="changelog-entry position-relative p-4" data-descripcion="El Tablero ofrece una medida de la oportunidad y correcto envío de la información financiera al Banco de México. Este Tablero está conformado por cinco indicadores independientes, los cuales en conjunto ofrecen una calificación total para cada Institución Financiera que reporta al Banco del México: 1) Extemporaneidad, 2) Reenvíos, 3) Retransmisiones, 4) Motivos de Retransmisión y 5) Oportunidad de aclaraciones. El Tablero permite también identificar la calificación obtenida por institución financiera para cada formulario que transmite al Banco de México. Las calificaciones se calculan mensualmente, con actualizaciones bimestrales.">
+                        <div class="change-type"></div>
+                        <div class="ms-3">
+                            <h6 class="fw-bold mb-3 textIndice">Tablero de calificaciones en el envio de información del sistema financiero del Banco de México</h6>
+                        </div>
+                    </div>
+					<div class="changelog-entry position-relative p-4" data-descripcion="Los derivados son instrumentos financieros (futuros, forwards, swaps y opciones) negociados, tanto en bolsas de derivados como en mercados extra-bursátiles (OTC u Over-the-Counter por sus siglas en inglés), cuyo valor depende del precio de uno o más subyacentes (tales como acciones, bonos, divisas, índices accionarios, materias primas, etc.), y su liquidación se realiza en una o más fechas futuras. Los derivados pueden utilizarse con fines de cobertura o de negociación.">
+                        <div class="change-type"></div>
+                        <div class="ms-3">
+                            <h6 class="fw-bold mb-3 textIndice">Mercado de derivados</h6>
+                        </div>
+                    </div>
+					<div class="changelog-entry position-relative p-4" data-descripcion="El mercado de valores comprende al mercado de (títulos de) deuda, también conocido como mercado de dinero, y al mercado de acciones (o mercado accionario). El mercado de deuda permite canalizar recursos (a través de bonos, certificados de depósito, certificados bursátiles, pagarés, etc.) entre los agentes económicos que tienen superávit de fondos prestables con aquellos que tienen déficit (usualmente empresas y gobiernos). El mercado de acciones permite a las empresas obtener recursos a través de la emisión de capital nuevo (acciones, certificados de participación ordinaria, etc.), el cual otorga a los adquirientes una participación en la propiedad y en las utilidades de dichas empresas. El intercambio de valores (títulos de deuda y acciones) se realiza en mercados organizados (bolsas de valores), tanto nacionales como extranjeros, que operan con reglas transparentes y que están disponibles al público en general. Cualquier duda, comentario o sugerencia agradeceremos enviar un correo electrónico a la dirección DISF@banxico.org.mx">
+                        <div class="change-type"></div>
+                        <div class="ms-3">
+                            <h6 class="fw-bold mb-3 textIndice">Mercado de valores</h6>
+                        </div>
+                    </div>
+					<div class="changelog-entry position-relative p-4" data-descripcion="El mercado cambiario (o de divisas) comprende al mercado cambiario internacional y al mercado cambiario nacional, y en este se compran y venden las monedas de curso legal emitidas por los distintos países. Los principales participantes son instituciones financieras como bancos comerciales, casas de bolsa, casas de cambio y bancos centrales; así como corporativos privados y gobiernos nacionales. Los mercados cambiarios facilitan tanto el comercio internacional de bienes y servicios, como la inversión extranjera directa e indirecta, ya que permiten la transferencia del poder de compra de una moneda a otra. Administradoras de activos financieros, exportadores, importadores, turistas nacionales y extranjeros, inversionistas, y trabajadores mexicanos en el extranjero, entre otros, recurren al mercado cambiario.Cualquier duda, comentario o sugerencia agradeceremos enviar un correo electrónico a la dirección DISF@banxico.org.mx">
+                        <div class="change-type"></div>
+                        <div class="ms-3">
+                            <h6 class="fw-bold mb-3 textIndice">Mercado cambiario</h6>
+                        </div>
+                    </div>
+					<div class="changelog-entry position-relative p-4" data-descripcion="Para que las instituciones de crédito (bancos múltiples y bancos de desarrollo) cumplan su función de intermediación, requieren captar recursos, tanto del público en general, como de otros bancos y entidades no financieras. Los principales productos de captación que ofrecen las instituciones de crédito son: instrumentos a la vista, instrumentos a plazo e instrumentos interbancarios. La captación de recursos tiene un costo, el cual se refleja en los intereses que las instituciones de crédito pagan a sus ahorradores.Cualquier duda, comentario o sugerencia agradeceremos enviar un correo electrónico a la dirección DISF@banxico.org.mx">
+                        <div class="change-type"></div>
+                        <div class="ms-3">
+                            <h6 class="fw-bold mb-3 textIndice">Capitalización de los bancos múltiples</h6>
+                        </div>
+                    </div>
+					<div class="changelog-entry position-relative p-4" data-descripcion="En este portal, se puede consultar la información histórica de la distribución de la tenencia sectorizada de los valores Gubernamentales, IPAB y de Banco de México">
+                        <div class="change-type"></div>
+                        <div class="ms-3">
+                            <h6 class="fw-bold mb-3 textIndice">Valores gubernamentales en circulación</h6>
+                        </div>
+                    </div>
+					<div class="changelog-entry position-relative p-4" data-descripcion="Para que las instituciones de crédito (bancos múltiples y bancos de desarrollo) cumplan su función de intermediación, requieren captar recursos, tanto del público en general, como de otros bancos y entidades no financieras. Los principales productos de captación que ofrecen las instituciones de crédito son: instrumentos a la vista, instrumentos a plazo e instrumentos interbancarios. La captación de recursos tiene un costo, el cual se refleja en los intereses que las instituciones de crédito pagan a sus ahorradores.Cualquier duda, comentario o sugerencia agradeceremos enviar un correo electrónico a la dirección DISF@banxico.org.mx">
+                        <div class="change-type"></div>
+                        <div class="ms-3">
+                            <h6 class="fw-bold mb-3 textIndice">Captación de recursos de los bancos múltiples y los bancos de desarrollo</h6>
+                        </div>
+                    </div>
+					<div class="changelog-entry position-relative p-4" data-descripcion="En este portal se puede consultar la información histórica de los flujos y saldos de inversionistas en títulos de renta variable emitidos en el mercado local.">
+                        <div class="change-type"></div>
+                        <div class="ms-3">
+                            <h6 class="fw-bold mb-3 textIndice">Mercado de renta variable</h6>
+                        </div>
+                    </div>
+			  </div>
+			  <div class="columna derecha">
+				<div>
+					<div class="card card-sleek">
+					  <div class="card-body">
+						<h5 class="card-title">Card Title</h5>
+						<p id="descripcion-card" class="card-text"></p>
 					  </div>
-				  </div>
-                  <div class="tab-pane fade d-flex flex-column" id="tab2" role="tabpanel" aria-labelledby="tab2-tab" style="overflow-y:auto;"> Contenido largo del Tab 2... </div>
-                  <div class="tab-pane fade d-flex flex-column" id="tab3" role="tabpanel" aria-labelledby="tab3-tab" style="overflow-y:auto;"> Contenido largo del Tab 3... </div>
-                  <div class="tab-pane fade d-flex flex-column" id="tab4" role="tabpanel" aria-labelledby="tab4-tab" style="overflow-y:auto;"> Contenido largo del Tab 4... </div>
-                </div>
-              </div>
-            </div>
+					</div>
+				</div>
+				
+				<div>
+					<div class="tabs-container">
+					  <!-- Botones de tabs -->
+					  <div class="tabs">
+						<button class="tab active" data-tab="tab1">
+							<img class="iconTaps" src="img/graficaIcon.png" alt="Graficas" >Graficas
+						</button>
+						<button class="tab" data-tab="tab2">
+							<img class="iconTaps" src="img/extractor.png" alt="Graficas" >Extractores
+						</button>
+						<button class="tab" data-tab="tab3">
+							<img class="iconTaps" src="img/nota.png" alt="Graficas" >Notas metodologicas
+						</button>
+						<button class="tab" data-tab="tab4">
+							<img class="iconTaps" src="img/microdato.png" alt="Graficas" >Microdatos
+						</button>
+					  </div>
+
+					  <!-- Contenido de los tabs -->
+					  <div class="tab-contents">
+						<div class="tab-content active" id="tab1">
+						  <h3>Contenido Tab 1</h3>
+						  <p>Este es el contenido del primer tab.</p>
+						</div>
+						<div class="tab-content" id="tab2">
+						  <h3>Contenido Tab 2</h3>
+						  <p>Este es el contenido del segundo tab.</p>
+						</div>
+						<div class="tab-content" id="tab3">
+						  <h3>Contenido Tab 3</h3>
+						  <p>Este es el contenido del tercer tab.</p>
+						</div>
+						<div class="tab-content" id="tab4">
+						  <h3>Contenido Tab 4</h3>
+						  <p>Este es el contenido del cuarto tab.</p>
+						</div>
+					  </div>
+					</div>
+				</div>
+
+			  </div>
           </div>
+		  
+		  
+		  
         </div>
       </div>
     </main>

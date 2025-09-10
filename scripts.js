@@ -94,40 +94,77 @@ $(document).ready(function() {
   });
   
   
-  $('.cards-izquierda .card').click(function() {
-    // Remover estilo de card seleccionada anterior
-    $('.cards-izquierda .card').css({
-      'background-color': 'white',
-      'color': 'black'
-    });
-
-    // Aplicar estilo a la card seleccionada
-    $(this).css({
-      'background-color': '#04b3bb',
-      'color': 'white'
-    });
-
-    // Obtener la descripción del card seleccionado
-    const descripcion = $(this).data('descripcion');
-
-    // Mostrar la descripción en la columna derecha
-    $('#descripcion-card').text(descripcion);
-  });
-  
+  /* Buscar indices */
   $('#buscarIndices').on('input', function() {
     const termino = $(this).val().toLowerCase();
 
     // Mostrar u ocultar cards según el término
-    $('.cards-izquierda .card').each(function() {
+    $('.textIndice').each(function() {
       const nombreCard = $(this).text().toLowerCase();
       if (nombreCard.includes(termino)) {
-        $(this).show();
+        $(this).parent().parent().show();
       } else {
-        $(this).hide();
+        $(this).parent().parent().hide();
       }
     });
   });
+  
+  /* Clic en indice */
+  $('.changelog-entry').click(function() {
+    $('.changelog-entry').find(".change-type").removeClass("added"); 
+	$('.changelog-entry').find(".textIndice").css("color","#ffffff");
 
+    
+    $(this).find(".change-type").addClass("added"); 
+	$(this).find(".textIndice").css("color","#FFD700");
+
+    // Obtiene nombre del indice seleccionado
+	const nombre = $(this).find(".textIndice").text();
+	
+	// Obtener la descripción del card seleccionado
+    const descripcion = $(this).data('descripcion');
+
+    // Mostrar la descripción en la columna derecha
+	$('.card-title').text(nombre);
+    $('#descripcion-card').text(descripcion);
+  });
+  
+  
+  
+  function actualizarAlturas() {
+	const headerAltura = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'));
+	const buscador = document.querySelector('.busqueda-libros');
+	const buscadorAltura = buscador && buscador.offsetHeight ? buscador.offsetHeight : 0;
+	const detalleL = document.querySelector('#detalle-libro');
+	const detalleLibroAltura = detalleL && detalleL.offsetHeight ? detalleL.offsetHeight : 0;
+console.log(detalleLibroAltura);
+  // Altura disponible exacta
+  const alturaDisponible = window.innerHeight - headerAltura - buscadorAltura - detalleLibroAltura;
+   console.log(alturaDisponible);
+
+  // Pasamos esta altura al grid
+  document.documentElement.style.setProperty('--altura-grid', alturaDisponible + 'px');
+}
+
+// Ejecutar al inicio y en resize
+actualizarAlturas();
+window.addEventListener('resize', actualizarAlturas);
+
+$('.textIndice').first().css('color', '#fd850c');
+$('.textIndice').first().click();
+
+
+$('.tab').click(function(){
+    var tabId = $(this).data('tab');
+
+    // Cambiar clase activa en botones
+    $('.tab').removeClass('active');
+    $(this).addClass('active');
+
+    // Mostrar contenido correspondiente
+    $('.tab-content').removeClass('active');
+    $('#' + tabId).addClass('active');
+  });
 
 
 });
