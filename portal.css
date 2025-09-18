@@ -40,7 +40,7 @@
 
 /* Permite que el texto del botón se ajuste */
 #texto-seleccionado {
-  color: #3b7878;
+  color: #000000;
   white-space: normal;
   word-wrap: break-word;
   flex: 1;
@@ -175,3 +175,18 @@
         left: 0;
       }
     }
+	
+	
+	#elementoSeleccionado{
+		background: linear-gradient(135deg, #04b3bb, #3b7878) !important;
+		padding: 10px;
+		color: #ffffff;
+		border-radius: 8px;
+	}
+	
+	.highcharts-title{
+		background: linear-gradient(135deg, #04b3bb, #3b7878) !important;
+		padding: 10px;
+		color: #ffffff;
+		border-radius: 8px;
+	}

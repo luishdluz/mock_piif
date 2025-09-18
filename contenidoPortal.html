@@ -76,7 +76,7 @@
 					  id="dropdownMenuButton" 
 					  data-bs-toggle="dropdown" 
 					  aria-expanded="false" 
-					  style=" color: #fff;border: 1px solid #20385a;text-align: center !important;font-weight: bold;">
+					  style=" color: #fff;border: 1px solid #04b3bb;text-align: center !important;font-weight: bold;background: rgba(4, 179, 187, 0.2);">
 				<span id="texto-seleccionado" class="text-wrap">
 				  Derivados Vigentes de Bancos y Casas de Bolsa
 				</span>
@@ -189,8 +189,8 @@
 			
 			<!-- Contenido dinámico -->
 			<div id="contenido" class="flex-grow-1 p-3">
-			  <h2>Bienvenido</h2>
-			  <p>Selecciona una opción del menú.</p>
+			  <h2 id="elementoSeleccionado">Bienvenido</h2>
+			 
 			  
 			  <div id="grafica" style="width: 100%; height: 400px; min-height: 400px;"></div>
 			  
@@ -209,7 +209,9 @@
     // Función para cargar contenido dinámicamente
     function cargarContenido(id) {
       const contenedor = document.getElementById("contenido");
-      contenedor.innerHTML = `<h2>${id}</h2><p>Has cargado el contenido de <b>${id}</b>.</p>`;
+      //contenedor.innerHTML = `<h2>${id}</h2><p>Has cargado el contenido de <b>${id}</b>.</p>`;
+	  $("#elementoSeleccionado").text(id);
+	  
     }
 	
 	function mostrarGrafica() {
@@ -220,9 +222,6 @@
 		},
 		title: {
 		  text: 'Ejemplo de Gráfica de Derivados'
-		},
-		subtitle: {
-		  text: 'Datos de ejemplo'
 		},
 		xAxis: {
 		  categories: ['Banco A', 'Banco B', 'Casa de Bolsa C', 'Banco D'],
