@@ -68,6 +68,7 @@ header {
   font-size: 0.85rem;
   color: #ffffff;
   margin-right: 0.5rem;
+  font-weight: bold;
 }
 .user-img {
   height: var(--header-h);
@@ -570,7 +571,6 @@ header {
 }
 
 .changelog-entry {
-  /*background: linear-gradient(135deg, #3498db, #20385a);*/
   background: url(img/Cuadro.png);
   color: #ffffff;
   border-radius: 4px;

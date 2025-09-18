@@ -146,10 +146,9 @@ $(document).ready(function() {
 		const buscadorAltura = buscador && buscador.offsetHeight ? buscador.offsetHeight : 0;
 		const detalleL = document.querySelector('#detalle-libro');
 		const detalleLibroAltura = detalleL && detalleL.offsetHeight ? detalleL.offsetHeight : 0;
-		console.log(detalleLibroAltura);
 		// Altura disponible exacta
 		const alturaDisponible = window.innerHeight - headerAltura - buscadorAltura - detalleLibroAltura;
-		console.log(alturaDisponible);
+
 
 		// Pasamos esta altura al grid
 		document.documentElement.style.setProperty('--altura-grid', alturaDisponible + 'px');
