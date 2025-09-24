@@ -70,6 +70,7 @@ header {
   margin-right: 0.5rem;
   font-weight: bold;
 }
+
 .user-img {
   height: var(--header-h);
   border-radius: 50% 0 0 50%;
