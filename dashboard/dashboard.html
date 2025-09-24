@@ -160,8 +160,19 @@
 
 
 		  <div class="tab-panel" id="tab3">
-			<h2>Buscar</h2>
-			<p>Gráficas y números importantes.</p>
+			<div class="buscador-acordeon">
+			  <!-- Buscador -->
+			  <div class="buscador-container">
+				<input type="text" id="inputBusqueda" placeholder="Escribe tu búsqueda...">
+				<button id="btnBuscar">Buscar</button>
+			  </div>
+
+			  <!-- Resultados -->
+			  <div id="resultadosBusqueda" class="resultados-busqueda">
+				<!-- Aquí se generarán los acordeones dinámicamente -->
+			  </div>
+			</div>
+
 		  </div>
 		  
 		</div>
@@ -170,7 +181,13 @@
 
     <!-- FOOTER -->
     <footer>
-      <span>© Banco de México</span>
-    </footer>
+  <img src="../img/logoBM.png" alt="Banco de México" class="logo-footer">
+  <span><strong>Banco de México</strong></span>
+  
+  <!-- Imagen a la derecha -->
+  <a href="../index.html" class="footer-link">
+    <img src="../img/home2.png" alt="Ir al inicio" class="footer-img-derecha">
+  </a>
+</footer>
   </body>
 </html>

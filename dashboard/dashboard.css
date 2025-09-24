@@ -148,11 +148,18 @@ footer {
   color: #fff;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  /* 🔹 centra el texto */
   border-top: 2px solid #fd850c;
   font-size: 0.85rem;
 }
 
+footer .logo-footer {
+  position: absolute;   /* 🔹 para que no afecte el centrado del texto */
+  left: 10px;           /* pegado a la izquierda */
+  height: 70%;          /* 🔹 se adapta a la altura del footer */
+  max-height: 40px;     /* para pantallas grandes no crezca demasiado */
+  object-fit: contain;  /* mantiene proporción */
+}
 
 /* === TAPS === */
 
@@ -213,7 +220,6 @@ main {
   flex: 1;
   display: none;
   overflow-y: auto;
-  padding: 20px;
   background: #F5F6FA;
   height: 100%;
 }
@@ -539,4 +545,91 @@ background: #04b3bb;
   }
 }
 
+
+
+/* Contenedor del buscador */
+.buscador-acordeon {
+  padding: 1rem;
+}
+
+/* Buscador y botón */
+.buscador-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.buscador-container input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #04b3bb;
+}
+
+.buscador-container button {
+  padding: 8px 16px;
+  background-color: #04b3bb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buscador-container button:hover {
+  background-color: #20385a;
+}
+
+/* Resultados */
+.resultados-busqueda {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Acordeón */
+.acordeon-item {
+  border: 1px solid #20385a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.acordeon-header {
+  background: linear-gradient(17deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.acordeon-content {
+  display: block;
+  padding: 10px;
+  background-color: #f5f6fa;
+  color: #0f172a;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-h);
+  background: radial-gradient(circle,rgba(0, 99, 166, 1) 0%, rgba(32, 56, 90, 1) 57%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* mantiene el texto centrado */
+  border-top: 2px solid #fd850c;
+  font-size: 0.85rem;
+  padding: 0 10px; /* deja espacio para la imagen derecha */
+}
+
+footer .footer-img-derecha {
+ position: absolute;
+    right: 10px;
+    height: 70%;
+    max-height: 40px;
+    object-fit: contain;
+	top: 10px;
+}
 

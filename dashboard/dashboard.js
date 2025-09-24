@@ -81,3 +81,46 @@ $(document).ready(function () {
     });
   });
 });
+
+
+document.getElementById("btnBuscar").addEventListener("click", () => {
+  const query = document.getElementById("inputBusqueda").value.trim();
+  const resultados = document.getElementById("resultadosBusqueda");
+
+  // Limpiar resultados previos
+  resultados.innerHTML = "";
+
+  if(query === ""){
+	resultados.innerHTML = "Sin resultados";
+	return;
+  }
+
+  // Ejemplo de datos simulados
+  const datos = [
+    { titulo: "Resultado 1", contenido: "Detalle del resultado 1 relacionado con '" + query + "'." },
+    { titulo: "Resultado 2", contenido: "Detalle del resultado 2 relacionado con '" + query + "'." },
+    { titulo: "Resultado 3", contenido: "Detalle del resultado 3 relacionado con '" + query + "'." }
+  ];
+
+  datos.forEach(item => {
+    const itemDiv = document.createElement("div");
+    itemDiv.classList.add("acordeon-item");
+
+    const header = document.createElement("div");
+    header.classList.add("acordeon-header");
+    header.textContent = item.titulo;
+
+    const content = document.createElement("div");
+    content.classList.add("acordeon-content");
+    content.textContent = item.contenido;
+
+    header.addEventListener("click", () => {
+      const isVisible = content.style.display === "block";
+      content.style.display = isVisible ? "none" : "block";
+    });
+
+    itemDiv.appendChild(header);
+    itemDiv.appendChild(content);
+    resultados.appendChild(itemDiv);
+  });
+});
