@@ -136,6 +136,8 @@ $(document).ready(function() {
 		// Mostrar la descripción en la modal
 		$('#infoModalLabel').text(nombre);
 		$('#descripcion-card-modal').text(descripcion);
+		
+		$('#infoIndMovil').text(nombre);
 	});
 
 
@@ -173,5 +175,19 @@ $(document).ready(function() {
 		$('.tab-content').removeClass('active');
 		$('#' + tabId).addClass('active');
 	});
+	
+	
+	const menuIndice = document.getElementById('menu-indices');
+const btnHamburguesaIndice = document.getElementById('btn-hamburguesa-indice');
+const btnCerrarIndice = document.getElementById('cerrar-menu');
+
+btnHamburguesaIndice.addEventListener('click', () => {
+  menuIndice.classList.add('abierto');
+});
+
+btnCerrarIndice.addEventListener('click', () => {
+  menuIndice.classList.remove('abierto');
+});
+
 	
 });

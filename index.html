@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Interactivo de Información Financiera</title>
-	
-	<link rel="icon" type="image/png" sizes="40x40" href="img/PIIF-icono.png">
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="style.css">
-    <!-- jQuery CDN -->
-    <script src="librerias/jquery-3.7.1.min.js"></script>
-    <!-- JS principal -->
-    <script src="scripts.js" defer></script>
+    <link rel="icon" type="image/png" sizes="40x40" href="img/PIIF-icono.png">
+    <!-- Bootstrap primero -->
     <link href="librerias/bootstrap.min.css" rel="stylesheet">
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery -->
+    <script src="librerias/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
     <script src="librerias/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js" defer></script>
+    <script src="librerias/highcharts.js"></script>
+    <script src="librerias/exporting.js"></script>
+    <script src="librerias/export-data.js"></script>
+    <script src="librerias/accessibility.js"></script>
   </head>
   <body>
     <!-- HEADER -->
@@ -21,9 +25,10 @@
       <div class="logo-portal">
         <img src="img/PIIF-logo.png" alt="Logo Portal" class="logo-grande">
         <img src="img/PIIF-icono.png" alt="Logo Pequeño" class="logo-pequeno">
-      </div <!-- Imagen central (solo visible en pantallas medianas y grandes) -->
+      </div>
+      <!-- Imagen central -->
       <div class="header-centro">
-        <!-- <img src="img/LogoBM.png" alt="Banco de México"> -->
+        <!-- <img src="../img/header_BM.png" alt="Banco de México"> -->
       </div>
       <div class="divInfoHeader">
         <div class="datos-usuario">
@@ -31,44 +36,39 @@
           <span>B16847 - 002001</span>
         </div>
         <img src="img/b16847.png" class="user-img" alt="Luis Antonio Hernández De La Luz">
-        <div id="menuUsuario" class="menu-usuario">
-          <p>Perfil</p>
-          <p>Salir</p>
-        </div>
       </div>
     </header>
-    <!-- MAIN / BIBLIOTECA -->
+    <!-- MAIN -->
     <main>
-      <div id="biblioteca">
-        <!-- Barra de búsqueda -->
-        <div class="busqueda-libros">
-          <!-- Botones circulares izquierda para pantallas grandes/medianas -->
-          <div class="botones-libros">
-            <img src="img/atras.png" class="icono-boton btn-atras libBoton" alt="Idioma ES">
-            <img src="img/esp.png" class="icono-boton" alt="Idioma ES">
-            <img src="img/eng.png" class="icono-boton" alt="Idioma EN">
-            <img src="img/permisos.png" class="icono-boton" alt="Permisos">
-            <img src="img/admin.png" class="icono-boton" alt="Administrador">
-            <img src="img/dashboard.png" class="icono-boton" alt="Dashboard" onclick="window.location.href='dashboard/dashboard.html'">
-            <img src="img/cerrar_sesion.png" class="icono-boton" alt="Cerrar Sesión">
-          </div>
-          <!-- Input de búsqueda -->
-          <input type="text" id="buscarLibro" placeholder="Buscar libro...">
-          <input type="text" id="buscarIndices" placeholder="Buscar Indices...">
-          <!-- Botón hamburguesa para pantallas pequeñas -->
-          <div class="menu-hamburguesa"> &#9776; </div>
-          <!-- Menú desplegable de hamburguesa -->
-          <div class="menu-hamburguesa-contenido">
-            <img src="img/atras.png" class="icono-boton btn-atras libBoton" alt="Idioma ES">
-            <img src="img/esp.png" class="icono-boton" alt="Idioma ES">
-            <img src="img/eng.png" class="icono-boton" alt="Idioma EN">
-            <img src="img/permisos.png" class="icono-boton" alt="Permisos">
-            <img src="img/admin.png" class="icono-boton" alt="Administrador">
-            <img src="img/dashboard.png" class="icono-boton" alt="Dashboard" onclick="window.location.href='dashboard/dashboard.html'">
-            <img src="img/cerrar_sesion.png" class="icono-boton" alt="Cerrar Sesión">
-          </div>
+      <div class="busqueda-libros">
+        <!-- Botones circulares izquierda para pantallas grandes/medianas -->
+        <div class="botones-libros">
+          <img src="img/atras.png" class="icono-boton btn-atras libBoton" alt="Idioma ES">
+          <img src="img/esp.png" class="icono-boton" alt="Idioma ES">
+          <img src="img/eng.png" class="icono-boton" alt="Idioma EN">
+          <img src="img/permisos.png" class="icono-boton" alt="Permisos">
+          <img src="img/admin.png" class="icono-boton" alt="Administrador">
+          <img src="img/dashboard.png" class="icono-boton" alt="Dashboard" onclick="window.location.href='dashboard/dashboard.html'">
+          <img src="img/cerrar_sesion.png" class="icono-boton" alt="Cerrar Sesión">
         </div>
-        <!-- Grid de libros -->
+        <!-- Input de búsqueda -->
+        <input type="text" id="buscarLibro" placeholder="Buscar libro...">
+        <input type="text" id="buscarIndices" placeholder="Buscar Indices...">
+        <!-- Botón hamburguesa para pantallas pequeñas -->
+        <div class="menu-hamburguesa"> &#9776; </div>
+        <!-- Menú desplegable de hamburguesa -->
+        <div class="menu-hamburguesa-contenido">
+          <img src="img/atras.png" class="icono-boton btn-atras libBoton" alt="Idioma ES">
+          <img src="img/esp.png" class="icono-boton" alt="Idioma ES">
+          <img src="img/eng.png" class="icono-boton" alt="Idioma EN">
+          <img src="img/permisos.png" class="icono-boton" alt="Permisos">
+          <img src="img/admin.png" class="icono-boton" alt="Administrador">
+          <img src="img/dashboard.png" class="icono-boton" alt="Dashboard" onclick="window.location.href='dashboard/dashboard.html'">
+          <img src="img/cerrar_sesion.png" class="icono-boton" alt="Cerrar Sesión">
+        </div>
+      </div>
+      <!-- Libros -->
+      <div class="contenedor-libros">
         <div class="grid-libros" id="gridLibros">
           <div class="libro" data-titulo="Créditos al Consumo" data-descripcion="Información detallada sobre los créditos al consumo en México." data-imagen="img/imgLibro.jpg">
             <div class="cinta">
@@ -443,17 +443,15 @@
             </div>
           </div>
         </div>
-        <!-- Contenido de libros -->
-        <div id="texto-indices" style="display:none; text-align:center; margin-top:20px;">
-          <!-- Contenedor para mostrar el libro seleccionado -->
-          <div id="detalle-libro">
-            <img id="detalle-imagen" src="" alt="Imagen del libro">
-            <div id="detalle-titulo"></div>
-          </div>
-          <!-- Contenido de indices -->
-          <div class="grid-secundario">
-            <div class="columna izquierda">
-              <div class="changelog-entry position-relative p-4" data-descripcion="El Portal Interactivo de Información Financiera (PIIF) es una herramienta informática de diseminación de información, la cual permite visualizar algunos de los principales datos sobre los aspectos más relevantes de diversos mercados financieros. El diseño del PIIF favorece el uso de la información financiera por parte de diferentes tipos de usuarios. De manera paralela, el PIIF ayuda en la organización y sistematización de la información financiera que compila el Banco de México.">
+		
+		<!-- Contenido de libros -->
+		<div id="texto-indices" style="display:none;">
+			
+<!-- MENÚ DE ÍNDICES -->
+  <div id="menu-indices" class="menu-indices">
+    <div id="cerrar-menu" class="cerrar-menu">✖</div>
+	
+			              <div class="changelog-entry position-relative p-4" data-descripcion="El Portal Interactivo de Información Financiera (PIIF) es una herramienta informática de diseminación de información, la cual permite visualizar algunos de los principales datos sobre los aspectos más relevantes de diversos mercados financieros. El diseño del PIIF favorece el uso de la información financiera por parte de diferentes tipos de usuarios. De manera paralela, el PIIF ayuda en la organización y sistematización de la información financiera que compila el Banco de México.">
                 <div class="change-type added"></div>
                 <div class="ms-3">
                   <h6 class="fw-bold mb-3 textIndice">Introducción</h6>
@@ -507,19 +505,48 @@
                   <h6 class="fw-bold mb-3 textIndice">Mercado de renta variable</h6>
                 </div>
               </div>
-            </div>
-            <div class="columna derecha">
-              <div>
-                <div class="card card-sleek d-none d-md-block">
+  </div>
+
+  <!-- CONTENIDO DEL ÍNDICE SELECCIONADO -->
+  <div class="contenido-indice">
+    <div class="titulo-indice">
+      <div id="btn-hamburguesa-indice" class="menu-hamburguesas">☰ Ver indices</div>
+      <div id="detalle-libro">
+            <img id="detalle-imagen" src="" alt="Imagen del libro">
+            <div id="detalle-titulo"></div>
+          </div>
+    </div>
+	
+	<div class="d-md-none nombreIndMovil">
+		<span id="infoIndMovil">Hola </span>
+	</div>
+	
+	
+
+	
+	<button class="btn w-100 d-block d-md-none botonInfoIndice" data-bs-toggle="modal" data-bs-target="#infoModal" style="border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;"> Ver descripción del índice </button>
+    
+	<!-- Descripcion del indice en movil -->
+			  <div class="card card-sleek d-none d-md-block" style="border-top-right-radius: 0px !important;border-top-left-radius: 0px !important;">
                   <div class="card-body">
-                    <h5 class="card-title">Card Title</h5>
+                    <h5 class="card-title"></h5>
                     <p id="descripcion-card" class="card-text"></p>
                   </div>
                 </div>
-                <!-- Botón: solo visible en pantallas pequeñas -->
-                <button class="btn w-100 d-block d-md-none botonInfoIndice" data-bs-toggle="modal" data-bs-target="#infoModal"> Ver descripción del índice </button>
-              </div>
-              <div>
+			  
+			  
+			  <div id="modal-card" class="modal">
+			  <div class="modal-contenido card-sleek">
+				<span class="cerrar">&times;</span>
+				<div class="card-body">
+				  <h5 class="card-title">Título de la Card</h5>
+				  <p id="descripcion-card" class="card-text">Descripción...</p>
+				</div>
+			  </div>
+			</div>
+
+			  
+	              <div>
                 <div class="tabs-container">
                   <!-- Botones de tabs -->
                   <div class="tabs">
@@ -771,13 +798,26 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+	
+  </div>
+			
+			
+			
+		</div>
+		
       </div>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
     </main>
-    <!-- MODAL -->
-    <div id="modalLibro" class="modal">
+	
+	<!-- Modales -->
+	<div id="modalLibro" class="modal">
       <div class="modal-contenido">
         <span class="cerrar">&times;</span>
         <img id="modalImagen" src="" alt="Imagen del libro">
@@ -799,5 +839,15 @@
         </div>
       </div>
     </div>
+	
+	
+	
+    <!-- FOOTER -->
+    <footer>
+      <img src="img/logoBM.png" alt="Banco de México" class="logo-footer">
+      <span>
+        <strong>Banco de México</strong>
+      </span>
+    </footer>
   </body>
 </html>

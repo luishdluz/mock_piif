@@ -1,25 +1,25 @@
 :root {
-  --header-h: 64px;
+  --header-h: 63px;
   --footer-h: 56px;
   --accent: #04b3bb;
 }
 
+
 * {
   box-sizing: border-box;
 }
-html,
-body {
+
+html, body {
   height: 100%;
   margin: 0;
-}
-body {
   font-family: system-ui, sans-serif;
   line-height: 1.5;
   background: #f8fafc;
   color: #0f172a;
+  overflow: hidden; /* importante: evitamos doble scroll */
 }
 
-/* HEADER */
+/* === HEADER === */
 header {
   position: fixed;
   top: 0;
@@ -29,18 +29,26 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to right, #ffffff 0%, #e6e9ef 15%, #16213d 100%);
+  background: url("img/Cab20252.png") no-repeat center center;
+  background-size: cover;
   border-bottom: 2px solid #fd850c;
   padding-left: 1rem;
   padding-right: 0;
   padding-top: 4px;
   padding-bottom: 4px;
   z-index: 1000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .logo-portal {
   display: flex;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.5); 
+	border: 1px solid #04b3bb;
+    padding: 0 0.5rem; 
+    border-radius: 0 8px 8px 0; 
 }
 .logo-portal img {
   height: calc(var(--header-h) - 12px);
@@ -59,16 +67,18 @@ header {
   gap: 0;
   margin-left: auto;
   position: relative;
+  color: #ffffff;
 }
 
 .datos-usuario {
   display: flex;
   flex-direction: column;
-  text-align: right;
+  text-align: center;
   font-size: 0.85rem;
-  color: #ffffff;
+  color: #000000;
   margin-right: 0.5rem;
   font-weight: bold;
+  padding-right: 10px;
 }
 
 .user-img {
@@ -77,6 +87,7 @@ header {
   object-fit: cover;
   display: block;
   margin-right: 0;
+  border-left: 2px solid #62DDFC;
 }
 .menu-usuario {
   display: none;
@@ -94,31 +105,110 @@ header {
   margin: 0.25rem 0;
 }
 
-/* Imagen central en el header */
 .header-centro {
-  position: absolute; /* para que quede sobre el degradado */
+  position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%); /* centrar horizontalmente */
-  height: var(--header-h); /* misma altura que el header */
+  transform: translateX(-50%);
+  height: var(--header-h);
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none; /* para que no interfiera con clicks */
+  pointer-events: none;
 }
 
 .header-centro img {
   height: 100%;
-  width: auto;
   object-fit: contain;
 }
 
-/* Ocultar en pantallas pequeñas */
+/* === MAIN === */
+main {
+  position: absolute;
+  top: var(--header-h);
+  bottom: var(--footer-h);
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  /* quitamos el overflow de main, lo maneja el contenedor de libros */
+  overflow: hidden; 
+}
+
+
+/* === FOOTER === */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-h);
+  background: radial-gradient(circle,rgba(0, 99, 166, 1) 0%, rgba(32, 56, 90, 1) 57%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* 🔹 centra el texto */
+  border-top: 2px solid #fd850c;
+  font-size: 0.85rem;
+}
+
+footer .logo-footer {
+  position: absolute;   /* 🔹 para que no afecte el centrado del texto */
+  left: 10px;           /* pegado a la izquierda */
+  height: 70%;          /* 🔹 se adapta a la altura del footer */
+  max-height: 40px;     /* para pantallas grandes no crezca demasiado */
+  object-fit: contain;  /* mantiene proporción */
+}
+
+/* === HEADER MEDIA === */
 @media (max-width: 768px) {
+  .logo-grande {
+    display: none;
+  }
+  .logo-pequeno {
+    display: block;
+  }
   .header-centro {
     display: none;
   }
 }
+
+
+
+@media (min-width: 768px) {
+  .divInfoHeader {
+    background-color: rgba(26, 42, 75, 0.6);
+    padding-left: 1.5rem; 
+    border-radius: 8px 0 0 8px; 
+	color: #ffffff !important;
+  }
+  
+  .datos-usuario {
+	color: #ffffff;
+  }
+  
+  
+}
+
+.menu-usuario {
+  display: none;
+  position: absolute;
+  top: var(--header-h);
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--accent);
+  padding: 0.5rem;
+  border-radius: 0 0 0 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-size: 0.85rem;
+}
+.menu-usuario p {
+  margin: 0.25rem 0;
+}
+
+
 
 /* MAIN / BIBLIOTECA */
 #biblioteca {
@@ -143,6 +233,11 @@ header {
   z-index: 999;
   gap: 1rem;
 }
+
+.busqueda-libros {
+  flex: 0 0 auto;
+}
+
 .busqueda-libros input {
   width: 100%;
   max-width: 500px;
@@ -473,6 +568,8 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   overflow: hidden;
+  border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 #detalle-imagen {
@@ -745,5 +842,176 @@ header {
   background: linear-gradient(135deg, #ffd566, #fd850c) !important;
   font-weight: bold !important;
 }
+
+.busqueda-libros {
+  flex: 0 0 auto;
+  padding: 0.5rem;
+  background: #fff;
+  z-index: 2;               /* que siempre quede encima */
+  height: 70px;             /* 🔹 ajusta según el alto real de la barra */
+  display: flex;
+  align-items: center;
+}
+
+.contenedor-libros {
+  position: absolute;
+  top: calc(var(--header-h) + 10px); /* header + altura de búsqueda */
+  bottom: calc(var(--footer-h) - 50px);
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  padding: 1rem;
+  background: #f8fafc;
+}
+
+/*CONTENIDO DE LIBROS NUEVO*/
+/* CONTENEDOR PRINCIPAL */
+#texto-indices {
+  display: flex;
+  height: calc(100vh - var(--header-h) - var(--footer-h) - 111px);
+  overflow: hidden;
+}
+
+/* MENÚ DE ÍNDICES (COLUMNA IZQUIERDA) */
+.menu-indices {
+  flex: 0 0 450px; /* ancho fijo */
+  background: #f8fafc;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* CONTENIDO DE LOS ÍNDICES */
+.menu-indices-contenido {
+  padding: 1rem;
+}
+
+.menu-indices ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-indices li {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu-indices li:hover {
+  background: #04b3bb;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* BOTÓN HAMBURGUESA */
+.menu-hamburguesas {
+  display: none; /* solo en móviles */
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: #fd850c;
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* BOTÓN CERRAR */
+.cerrar-menu {
+  display: none; /* visible en móviles cuando el menú se abre */
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+/* COLUMNA DERECHA: CONTENIDO DEL ÍNDICE */
+.contenido-indice {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background: #fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 767px) {
+  #texto-indices {
+    flex-direction: column;
+  }
+
+  .menu-indices {
+    position: fixed;
+    top: var(--header-h);
+    left: -390px; 
+    width: 380px;
+    height: calc(100vh - var(--header-h) - var(--footer-h));
+    transition: left 0.3s ease;
+    z-index: 1000;
+	padding: 20px;
+  }
+
+  .menu-indices.abierto {
+    left: 0;
+  }
+
+  .menu-hamburguesas {
+    display: block;
+  }
+
+  .cerrar-menu {
+    display: block;
+  }
+
+  .contenido-indice {
+    flex: 1 0 auto;
+  }
+}
+
+
+
+
+
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 2000; /* más alto que todo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal-contenido {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.cerrar {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nombreIndMovil{
+	background: linear-gradient(77deg, rgba(0, 99, 166, 1) 0%, rgba(32, 56, 90, 1) 57%);
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+}
+
 
 

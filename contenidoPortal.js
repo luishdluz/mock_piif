@@ -60,6 +60,13 @@ document.querySelectorAll("a.menu-link.flecha").forEach(opcion => {
   });
 });
 
+window.addEventListener('load', function() {
+  const barra = document.getElementById('titulo-y-barra');
+  const contenido = document.getElementById('contenido-portal');
+  const altura = barra.offsetHeight;
+  contenido.style.paddingTop = altura + 'px';
+});
+
 
 document.getElementById("expandirTodo").addEventListener("click", () => {
     document.querySelectorAll("#menuPrincipal ul").forEach(sub => {
