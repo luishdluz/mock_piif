@@ -1,1 +1,176 @@
-a
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Interactivo de Información Financiera</title>
+    
+    <link rel="icon" type="image/png" sizes="40x40" href="../img/PIIF-icono.png">
+    <!-- Bootstrap primero -->
+    <link href="../librerias/bootstrap.min.css" rel="stylesheet">
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- jQuery -->
+    <script src="../librerias/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="../librerias/bootstrap.bundle.min.js"></script>
+	
+	<script src="dashboard.js" defer></script>
+	
+	<script src="../librerias/highcharts.js"></script>
+	<script src="../librerias/exporting.js"></script>
+	<script src="../librerias/export-data.js"></script>
+	<script src="../librerias/accessibility.js"></script>
+	
+	
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo-portal">
+        <img src="../img/PIIF-logo.png" alt="Logo Portal" class="logo-grande">
+        <img src="../img/PIIF-icono.png" alt="Logo Pequeño" class="logo-pequeno">
+      </div> <!-- Imagen central -->
+      <div class="header-centro">
+        <!-- <img src="../img/header_BM.png" alt="Banco de México"> -->
+      </div>
+      <div class="divInfoHeader">
+        <div class="datos-usuario">
+          <span>Luis Antonio Hernández De La Luz</span>
+          <span>B16847 - 002001</span>
+        </div>
+        <img src="../img/b16847.png" class="user-img" alt="Luis Antonio Hernández De La Luz">
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+		
+		<!-- Taps -->
+		<nav class="tabs-container">
+		  <ul class="tabs">
+			<li class="tab active" data-tab="tab1">Inicio</li>
+			<li class="tab" data-tab="tab2">Mi dashboard</li>
+			<li class="tab" data-tab="tab3">Buscar</li>
+		  </ul>
+		</nav>
+		
+		<!-- Contenido de Tabs -->
+		<div class="tabs-content">
+		
+		  <!-- INICIO -->
+		  <div class="tab-panel active" id="tab1">
+			<!-- Contenido de inicio -->
+				<div class="layout">
+				  <!-- MENU LATERAL -->
+				  <aside class="menu-lateral" id="menuLateral">
+				  
+				  <button class="menu-cerrar" id="cerrarMenu">✖</button>
+
+					<!-- Buscador fijo -->
+					<div class="menu-buscador">
+					  <input type="text" placeholder="Buscar..." />
+					</div>
+
+					<!-- Lista de menú -->
+					<ul class="menu-niveles">
+					  <li>
+						<button class="nivel-toggle">📂 Opción 1</button>
+						<ul>
+						  <li>
+							<button class="nivel-toggle">📂 Submenú 1.1</button>
+							<ul>
+							  <li>📄 Item 1.1.1</li>
+							  <li>📄 Item 1.1.2</li>
+							</ul>
+						  </li>
+						  <li>📄 Item 1.2</li>
+						</ul>
+					  </li>
+					  <li>
+						<button class="nivel-toggle">📂 Opción 2</button>
+						<ul>
+						  <li>📄 Item 2.1</li>
+						</ul>
+					  </li>
+					</ul>
+
+					<!-- Botones fijos abajo -->
+					<div class="menu-botones">
+					  <button id="expandir">Expandir todo</button>
+					  <button id="contraer">Contraer todo</button>
+					</div>
+				  </aside>
+
+				  <!-- BOTON HAMBURGUESA (solo móvil) -->
+				  <button class="menu-toggle w-75 botonMenudash" id="menuToggle">☰ Ver dashboards</button>
+
+				  <!-- CONTENIDO -->
+					<section class="contenido">
+					  <h2 class="tituloDash">Dashboard</h2>
+					  <div class="parametros">
+							<label for="fechaInicio">Fecha inicial:</label>
+							<input type="date" id="fechaInicio" name="fechaInicio">
+
+							<label for="fechaFin">Fecha final:</label>
+							<input type="date" id="fechaFin" name="fechaFin">
+
+							<button id="aplicarParametros">Aplicar</button>
+					  </div>
+					  <div class="grid-graficas">
+						<div id="grafica1" class="grafica"></div>
+						<div id="grafica2" class="grafica"></div>
+						<div id="grafica3" class="grafica"></div>
+						<div id="grafica4" class="grafica"></div>
+						<div id="grafica5" class="grafica"></div>
+						<div id="grafica6" class="grafica"></div>
+						<div id="grafica7" class="grafica"></div>
+						<div id="grafica8" class="grafica"></div>
+						<div id="grafica9" class="grafica"></div>
+					  </div>
+					</section>
+				</div>
+
+			
+			
+			<!-- Fin del contenido de inicio -->
+		  </div>
+		  
+		  
+		  
+		  
+		  <div class="tab-panel" id="tab2">
+			<section class="contenido">
+					  <h2 class="tituloDash">Dashboard 2</h2>
+					  
+					  <div class="grid-graficasDash">
+						<div id="grafica10" class="grafica"></div>
+						<div id="grafica11" class="grafica"></div>
+						<div id="grafica12" class="grafica"></div>
+						<div id="grafica13" class="grafica"></div>
+						<div id="grafica14" class="grafica"></div>
+						<div id="grafica15" class="grafica"></div>
+						<div id="grafica16" class="grafica"></div>
+						<div id="grafica17" class="grafica"></div>
+						<div id="grafica18" class="grafica"></div>
+					  </div>
+					</section>
+		  </div>
+
+
+
+		  <div class="tab-panel" id="tab3">
+			<h2>Buscar</h2>
+			<p>Gráficas y números importantes.</p>
+		  </div>
+		  
+		</div>
+		
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© Banco de México</span>
+    </footer>
+  </body>
+</html>
