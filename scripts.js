@@ -138,6 +138,8 @@ $(document).ready(function() {
 		$('#descripcion-card-modal').text(descripcion);
 		
 		$('#infoIndMovil').text(nombre);
+		
+		document.getElementById('cerrar-menu').click();
 	});
 
 
